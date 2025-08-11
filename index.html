@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Компания 'Легион' - профессиональные грузоперевозки по России. Надёжно, быстро, с гарантией сохранности груза.">
+    <title>Легион - Грузоперевозки</title>
+    
+    <!-- Иконочный шрифт Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Базовые стили для кроссбраузерности и мобильной адаптивности */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Сетка для адаптивности */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col {
+            padding: 0 15px;
+            flex: 1 0 0%;
+        }
+        
+        /* Стили для header */
+        header {
+            background-color: #1a3e72;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #ffcc00;
+        }
+        
+        /* Навигация */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Герой секция */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #1a3e72;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-3px);
+        }
+        
+        /* Секции */
+        section {
+            padding: 60px 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #1a3e72;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .service-card ion-icon {
+            font-size: 48px;
+            color: #1a3e72;
+            margin-bottom: 20px;
+        }
+        
+        /* Форма */
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        /* Футер */
+        footer {
+            background-color: #1a3e72;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #ffcc00;
+            color: #1a3e72;
+            transform: translateY(-3px);
+        }
+        
+        /* Кнопка наверх */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #1a3e72;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #ffcc00;
+            color: #1a3e72;
+        }
+        
+        /* Медиа запросы для мобильных устройств */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта с логотипом и навигацией -->
+    <header>
+        <div class="container">
+            <div class="row" style="align-items: center;">
+                <div class="col">
+                    <div class="logo">ЛЕГИ<span>ОН</span></div>
+                </div>
+                <div class="col">
+                    <nav>
+                        <ul>
+                            <li><a href="#services">Услуги</a></li>
+                            <li><a href="#about">О компании</a></li>
+                            <li><a href="#advantages">Преимущества</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция с основным заголовком -->
+    <section class="hero">
+        <div class="container">
+            <h1>Профессиональные грузоперевозки по всей России</h1>
+            <p>Надёжность, скорость и сохранность вашего груза - наш главный приоритет. Работаем с 2010 года.</p>
+            <a href="#contacts" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+
+    <!-- Секция с услугами компании -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Наши услуги</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="service-card">
+                        <ion-icon name="cube-outline"></ion-icon>
+                        <h3>Грузоперевозки по России</h3>
+                        <p>Доставка сборных и цельных грузов в любой регион страны. Оптимальные маршруты и сроки.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="service-card">
+                        <ion-icon name="earth-outline"></ion-icon>
+                        <h3>Международные перевозки</h3>
+                        <p>Организация мультимодальных перевозок с соблюдением всех таможенных процедур.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="service-card">
+                        <ion-icon name="car-outline"></ion-icon>
+                        <h3>Городские перевозки</h3>
+                        <p>Быстрая и аккуратная доставка грузов по городу и области с полной страховкой.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "О компании" -->
+    <section id="about" class="about" style="background-color: #f0f4f8;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>О компании</h2>
+                    <p>Компания "Легион" работает на рынке грузоперевозок с 2010 года. За это время мы перевезли более 15 000 грузов различной сложности и объёма.</p>
+                    <p>Наш автопарк включает более 50 единиц современной техники разной грузоподъёмности. Все водители имеют большой опыт работы и регулярно проходят медицинские осмотры.</p>
+                    <p>Мы дорожим своей репутацией и гарантируем сохранность вашего груза на всех этапах перевозки.</p>
+                </div>
+                <div class="col">
+                    <img src="https://via.placeholder.com/600x400" alt="Автопарк компании Легион" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция с преимуществами -->
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2>Наши преимущества</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="service-card">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        <h3>Страхование груза</h3>
+                        <p>Все перевозки осуществляются с полным страхованием груза от всех рисков.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="service-card">
+                        <ion-icon name="time-outline"></ion-icon>
+                        <h3>Соблюдение сроков</h3>
+                        <p>Чёткое соблюдение оговорённых сроков доставки с фиксированной ставкой.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="service-card">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        <h3>Прозрачный договор</h3>
+                        <p>Чёткие условия сотрудничества без скрытых платежей и комиссий.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция с контактами и формой -->
+    <section id="contacts" class="contacts" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="row">
+                <div class="col">
+                    <h3>Наши реквизиты</h3>
+                    <p><ion-icon name="location-outline"></ion-icon> г. Москва, ул. Транспортная, 15</p>
+                    <p><ion-icon name="call-outline"></ion-icon> +7 (495) 123-45-67</p>
+                    <p><ion-icon name="mail-outline"></ion-icon> info@legion-trans.ru</p>
+                    <p><ion-icon name="time-outline"></ion-icon> Пн-Пт: 9:00 - 18:00</p>
+                    
+                    <div class="social-links">
+                        <a href="https://t.me/legion_trans" aria-label="Telegram"><ion-icon name="logo-telegram"></ion-icon></a>
+                        <a href="https://wa.me/74951234567" aria-label="WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                        <a href="viber://chat?number=+74951234567" aria-label="Viber"><ion-icon name="logo-viber"></ion-icon></a>
+                        <a href="https://vk.com/legion_trans" aria-label="ВКонтакте"><ion-icon name="logo-vk"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="contact-form">
+                        <h3>Оставить заявку</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение</label>
+                                <textarea id="message" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <div class="row" style="text-align: center;">
+                <div class="col">
+                    <p>&copy; 2023 Компания "Легион". Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="back-to-top" id="backToTop"><ion-icon name="arrow-up-outline"></ion-icon></a>
+
+    <script>
+        // Скрипт для кнопки "Наверх"
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
